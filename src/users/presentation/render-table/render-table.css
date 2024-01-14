@@ -1,0 +1,94 @@
+table {
+    margin-top: 30px;
+    border-collapse: collapse;
+
+    & thead tr > th {
+        padding: 15px;
+        width: 200px;
+    }
+
+    & th:nth-child(odd) {
+        background-color: var(--table_bg_color);
+        color: var(--font_bg_color);
+    }
+
+    & th:nth-child(even) {
+        background-color: var(--table_bg_color_2);
+        color: var(--font_bg_color_2);
+    }
+
+    & tbody {
+        color: var(--tb-tr_color);
+        font-weight: 300;
+
+        & tr:nth-child(even) {
+
+            & > * {
+                padding: 7px 20px;
+            }
+
+            & td:nth-child(odd) {
+                background-color: var(--tb-tr_bg_color);
+            }
+
+            & td:nth-child(even) {
+                background-color: var(--tb-tr_bg_color_2);
+            }
+        }
+
+        & tr:nth-child(odd) {
+
+            & > * {
+                padding: 6px 20px;
+            }
+
+            & td:nth-child(odd) {
+                background-color: var(--tb-tr_bg_color_odd);
+            }
+
+            & td:nth-child(even) {
+                background-color: var(--tb-tr_bg_color_2_odd);
+            }
+        }
+    }
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    & a.select-btn {
+        box-shadow: 0 5px 0 var(--select_bg_button_shadow);
+        background-color: var(--select_bg_button);
+        color: var(--select_text_button);
+        transition: all 150ms;
+        
+        &:focus {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 var(--select_bg_button_shadow);
+        }
+    }
+    
+    & a.delete-btn {
+        box-shadow: 0 5px 0 var(--delete_bg_button_shadow);
+        background-color: var(--delete_bg_button);
+        color: var(--delete_text_button);
+        transition: all 150ms;
+
+        &:focus {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 var(--delete_bg_button_shadow);
+        }
+    }
+
+    & a {
+        transform: translateY(-2px);
+        padding: 3px 10px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 500;
+        text-transform: lowercase;
+    }
+}

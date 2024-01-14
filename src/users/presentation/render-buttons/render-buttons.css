@@ -1,0 +1,31 @@
+.buttons-secc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+    & .buttons-div {
+        gap: 10px;
+        max-width: fit-content;
+    
+        & > button {
+            border: none;
+            background-color: rgba(153, 153, 153, 0.2);
+            color: #4a4a4a;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 100ms;
+            
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        & span {
+            color: #3b3b3b;
+            padding-inline: 40px;
+        }
+    }
+}
