@@ -21,33 +21,17 @@ table {
         color: var(--tb-tr_color);
         font-weight: 300;
 
-        & tr:nth-child(even) {
+        & tr {
 
-            & > * {
-                padding: 7px 20px;
+            &:nth-child(even) {
+                background-color: var(--even-rows);
             }
 
-            & td:nth-child(odd) {
-                background-color: var(--tb-tr_bg_color);
+            &:nth-child(odd) {
+                background-color: var(--odd-rows);
             }
-
-            & td:nth-child(even) {
-                background-color: var(--tb-tr_bg_color_2);
-            }
-        }
-
-        & tr:nth-child(odd) {
-
             & > * {
                 padding: 6px 20px;
-            }
-
-            & td:nth-child(odd) {
-                background-color: var(--tb-tr_bg_color_odd);
-            }
-
-            & td:nth-child(even) {
-                background-color: var(--tb-tr_bg_color_2_odd);
             }
         }
     }

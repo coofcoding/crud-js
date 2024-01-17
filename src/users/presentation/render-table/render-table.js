@@ -1,4 +1,6 @@
 import usersStore from '../../store/users-store';
+import { deleteUser } from '../../use-cases/delete-user-by-id';
+import { showModal } from '../render-modal/render-modal';
 import './render-table.css';
 
 let table;
@@ -23,6 +25,34 @@ const createTable = () => {
     return table;
 }
 
+const tableSelectListener = ( event ) => {
+    const element = event.target.closest('.select-btn');
+    
+    if ( !element ) return;
+
+    const id = element.getAttribute('data-id');
+    showModal( id );
+}
+
+const tableDeleteListener = async( event ) => {
+    const element = event.target.closest('.delete-btn');
+    
+    if ( !element ) return;
+
+    const id = element.getAttribute('data-id');
+    
+    try {
+        await deleteUser(id);
+        await usersStore.reloadPage();
+        document.querySelector('#current-page').innerText = usersStore.getCurrentPage();
+        renderTable();
+    } catch (error) {
+        console.log(error)
+        alert('No se pudo eliminar');
+    }
+
+}
+
 /**
  * 
  * @param {HTMLDivElement} element 
@@ -36,7 +66,8 @@ export const renderTable = (element) => {
 
         element.append(table);
 
-        // TODO: listeners a la table
+        table.addEventListener('click', tableSelectListener );
+        table.addEventListener('click', tableDeleteListener );
     };
 
     let tableHTML = '';

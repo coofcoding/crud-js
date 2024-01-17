@@ -16,6 +16,8 @@
   --tb-tr_color:          rgb(100, 100, 100);
   --font_bg_color_2:      rgb(209, 209, 209);
   --tb-tr_bg_color_2_odd: rgb(224, 224, 224);
+  --even-rows:            rgb(223, 223, 223);
+  --odd-rows:             rgb(233, 233, 233);
   --tb-tr_bg_color_2:     rgb(239, 239, 239);
 
   /* Buttons colors */

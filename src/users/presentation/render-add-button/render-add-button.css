@@ -1,0 +1,20 @@
+.fab-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: rgb(150, 199, 255);
+    color: #0c095f;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 150ms;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+
+    &:hover {
+        background-color: rgb(86, 121, 162);
+        color: #fff;
+    }
+}
